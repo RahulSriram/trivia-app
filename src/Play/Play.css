@@ -1,0 +1,67 @@
+.play {
+  padding: 20vh 25vw;
+}
+
+.play-component {
+  margin: 1vh 1vw;
+  font-weight: lighter;
+}
+
+.play-header {
+  font-weight: bold;
+  height: 4vh;
+}
+
+.question-counter-wrapper {
+  float: left;
+  font-size: large;
+  font-weight: bold;
+}
+
+.question-counter {
+  font-style: oblique;
+  font-weight: normal;
+}
+
+.score-counter-wrapper {
+  float: right;
+}
+
+.score-counter {
+  color: white;
+  background-color: orangered;
+}
+
+.next-button {
+  margin-top: 2vh;
+  margin-left: 2vw;
+  margin-bottom: 1vw;
+  float: left;
+  width: 15%;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 8px solid transparent;
+  border-radius: 50%;
+  border-top: 8px solid #28a745;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px; /*set to a negative number 1/2 of your height*/
+  margin-left: -50px; /*set to a negative number 1/2 of your width*/
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

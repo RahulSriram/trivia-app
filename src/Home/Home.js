@@ -38,14 +38,14 @@ export class Home extends Component {
     
     return (
       <div className="home">
-        <div>
-          <h2 className="form-signin-heading">Choose your game</h2>
+        <div className="home-input">
+          <h2 className="form-heading">Choose your game</h2>
         </div>
-        <div>
+        <div className="home-input">
           <label htmlFor="amount">Number of Questions:</label>
           <input type="number" name="amount" id="trivia_amount" className="form-control" min="1" max="50" value={this.state.settings.amount} onChange={this.onInputChanged} />
         </div>
-        <div>
+        <div className="home-input">
           <label htmlFor="category">Select Category: </label>
           <select name="category" className="form-control" value={this.state.settings.category} onChange={this.onInputChanged}>
             <option value="any">Any Category</option>
@@ -75,7 +75,7 @@ export class Home extends Component {
             <option value="32">Entertainment: Cartoon &amp; Animations</option>
           </select>
         </div>
-        <div>
+        <div className="home-input">
           <label htmlFor="difficulty">Select Difficulty: </label>
           <select name="difficulty" className="form-control" value={this.state.settings.difficulty} onChange={this.onInputChanged}>
             <option value="any">Any Difficulty</option>
@@ -84,7 +84,7 @@ export class Home extends Component {
             <option value="hard">Hard</option>
           </select>
         </div>
-        <div>
+        <div className="home-input">
           <label htmlFor="type">Select Type: </label>
           <select name="type" className="form-control" value={this.state.settings.type} onChange={this.onInputChanged}>
           <option value="any">Any Type</option>
@@ -92,8 +92,13 @@ export class Home extends Component {
             <option value="boolean">True / False</option>
           </select>
         </div>
-        <div>
-          <button className="btn btn-outline-success" onClick={this.handlePlayButtonClick} disabled={this.isLoading}>
+        {this.props.previousScore !== null && 
+          <div className="home-input score-alert alert alert-success">
+            You scored <strong>{this.props.previousScore}</strong> point(s) in your last game
+          </div>
+        }
+        <div className="home-input play-button-wrapper">
+          <button className="play-button btn btn-outline-success" onClick={this.handlePlayButtonClick} disabled={this.isLoading}>
             {(this.props.previousScore === null) ? 'Play!' : 'Play again!'}
           </button>
         </div>

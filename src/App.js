@@ -30,6 +30,11 @@ class App extends Component {
     if (!this.state.isPlaying) {
       return (
         <div>
+          <div className="app-header">
+            <a href="/">
+              Trivia App
+            </a>
+          </div>
           <Home previousScore={this.state.score}
             onPlayButtonClick={this.onPlayButtonClick} />
         </div>
@@ -37,6 +42,11 @@ class App extends Component {
     } else if (this.state.isPlaying && this.state.settings) {
       return (
         <div>
+          <div className="app-header">
+            <a href="/">
+              Trivia App
+            </a>
+          </div>
           <Play settings={this.state.settings}
             onGameComplete={this.onGameComplete} />
         </div>

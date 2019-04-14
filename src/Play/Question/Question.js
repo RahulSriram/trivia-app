@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Question.css';
 
 export class Question extends Component {
   constructor(props) {
@@ -69,16 +70,17 @@ export class Question extends Component {
 
   render() {
     let answerOptions = this.state.answers.map(answer =>
-      <div key={answer.index} disabled={this.state.isAnswered}>
-        <input type='radio' name='answers' value={answer.index} disabled={this.state.isAnswered} checked={answer.checked} onChange={e => this.onAnswerChosen(answer.index)} />
-        <span>
+      <label className="answer-choice-wrapper" key={answer.index} disabled={this.state.isAnswered}>
+        <span className="answer-choice-text">
           {htmlDecode(answer.answer)}
         </span>
-      </div>
+        <input type='radio' name='answers' value={answer.index} disabled={this.state.isAnswered} checked={answer.checked} onChange={e => this.onAnswerChosen(answer.index)} />
+        <span className="answer-choice-radio" />
+      </label>
     );
     return (
-      <div>
-        <div>
+      <div className="question-container">
+        <div className="question-component question-header">
           {htmlDecode(this.props.question.question)}
         </div>
         <div>

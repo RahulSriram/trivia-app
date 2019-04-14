@@ -1,5 +1,29 @@
 .home {
-    width: 50%;
-    height: 50%;
-    vertical-align: middle;
+  padding: 20vh 32vw;
+}
+
+.home-input {
+  margin: 1vh 1vw;
+  font-weight: lighter;
+}
+
+.home-divider {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.home-input .form-heading {
+  text-align: center;
+  font-weight: lighter;
+}
+
+.score-alert {
+  margin-top: 2vh;
+  margin-bottom: 0vh;
+}
+.play-button-wrapper {
+  margin-top: 3vh;
+}
+.play-button {
+  width: 100%;
 }

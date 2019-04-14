@@ -1,0 +1,83 @@
+.question-container {
+  margin: 1vh 1vw;
+}
+
+.question-component {
+  margin: 1vh 1vw;
+  font-weight: lighter;
+}
+
+.question-header {
+  font-weight: normal;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.answer-choice-text {
+  margin-left: 1vw;
+}
+
+.answer-choice-wrapper {
+  display: block;
+  position: relative;
+  margin: 1vh 1vw;
+  cursor: pointer;
+  padding-left: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.answer-choice-wrapper:disabled {
+  cursor: not-allowed;
+}
+
+.answer-choice-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.answer-choice-radio {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .answer-choice-radio {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.answer-choice-wrapper input:checked ~ .answer-choice-radio {
+  background-color: #28a745;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.answer-choice-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.answer-choice-wrapper input:checked ~ .answer-choice-radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.answer-choice-wrapper .answer-choice-radio:after {
+ 	top: 5px;
+	left: 5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: white;
+}

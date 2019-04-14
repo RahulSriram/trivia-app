@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Question } from './Question/Question.js';
+import './Play.css';
 
 export class Play extends Component {
   constructor(props) {
@@ -67,28 +68,30 @@ export class Play extends Component {
     
     if (questions.length) {
       return (
-        <div>
-          <div>
-            <span>
-              Question {currentQuestionIndex + 1} of {questions.length}
+        <div className="play">
+          <div className="play-component play-header">
+            <span className="question-counter-wrapper">
+              Question <span className="question-counter">{currentQuestionIndex + 1} of {questions.length}</span>
             </span>
-            <span>
-              Score: {this.state.score}
+            <span className="score-counter-wrapper">
+              Score <span className="score-counter badge">{this.state.score}</span>
             </span>
           </div>
-          <div>
+          <div className="play-component">
             <Question question={questions[currentQuestionIndex]}
               onQuestionAnswered={this.onQuestionAnswered} />
           </div>
-          <div>
-            <button disabled={!isCurrentQuestionAnswered} onClick={this.onNextButtonClick}>
+          <div className="play-component">
+            <button className="next-button btn btn-outline-success" disabled={!isCurrentQuestionAnswered} onClick={this.onNextButtonClick}>
               {(isLastQuestion) ? 'Done' : 'Next'}
             </button>
           </div>
         </div>
       )
     } else {
-      return null;
+      return (
+        <div class="loader"/>
+      );
     }
   }
 }
