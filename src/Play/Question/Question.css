@@ -29,8 +29,9 @@
   user-select: none;
 }
 
-.answer-choice-wrapper:disabled {
+.disabled-answer-choice-wrapper {
   cursor: not-allowed;
+  opacity: 0.75;
 }
 
 .answer-choice-wrapper input {

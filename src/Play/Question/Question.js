@@ -69,8 +69,13 @@ export class Question extends Component {
   }
 
   render() {
+    let answerChoiceWrapperClasses = ["answer-choice-wrapper"];
+    if (this.state.isAnswered) {
+      answerChoiceWrapperClasses.push("disabled-answer-choice-wrapper");
+    }
+    
     let answerOptions = this.state.answers.map(answer =>
-      <label className="answer-choice-wrapper" key={answer.index} disabled={this.state.isAnswered}>
+      <label className={answerChoiceWrapperClasses.join(' ')} key={answer.index} disabled={this.state.isAnswered}>
         <span className="answer-choice-text">
           {htmlDecode(answer.answer)}
         </span>
